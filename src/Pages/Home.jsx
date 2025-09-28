@@ -49,7 +49,7 @@ function Home() {
   };
 
   return (
-    <div className={`home-container ${isLoaded ? 'loaded' : ''}`}>
+    <div id="Home" className={`home-container ${isLoaded ? 'loaded' : ''}`}>
       {/* Animated Background Particles */}
       <div className="particles-bg">
         {[...Array(50)].map((_, i) => (

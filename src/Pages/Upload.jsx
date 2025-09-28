@@ -35,7 +35,7 @@ function Upload() {
   ];
 
   return (
-    <div className="upload-container">
+    <div  id ="Upload" className="upload-container">
       {/* Animated Background with Floating Images */}
       <div className="floating-bg">
         {Array.from({ length: 20 }, (_, i) => (

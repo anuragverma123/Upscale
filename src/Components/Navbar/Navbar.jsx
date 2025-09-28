@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
 import { Menu, X, Home, History, Info, Upload, Mail, LogIn } from 'lucide-react';
 import './Navbar.css';
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home', icon: Home },
-    { name: 'History', href: '#history', icon: History },
-    { name: 'About', href: '#about', icon: Info },
-    { name: 'Upload', href: '#upload', icon: Upload },
-    { name: 'Contact', href: '#contact', icon: Mail }
+    { name: 'Home', href: '#Home', icon: Home },
+    { name: 'History', href: '#History', icon: History },
+    { name: 'About', href: '#About', icon: Info },
+    { name: 'Upload', href: '#Upload', icon: Upload },
+    { name: 'Contact', href: '#Contact', icon: Mail }
+    
   ];
+
+
+
+
+
+
+
 
   return (
     <nav className="navbar" role="navigation" aria-label="Main navigation">
@@ -34,9 +46,27 @@ const Navbar = () => {
           })}
 
           {/* Login Button */}
-          <a href="#login" className="nav-link login-link">
+          <a href="#log" className="nav-link login-link">
             <LogIn size={18} />
-            <span>Login</span>
+          
+            
+             <AnchorLink
+            className="anchor-link"
+            href="#log"
+            offset={50}
+            onClick={() => {
+              setMenu("Login");
+              handleClose();
+            }}
+          >
+            <span>Log in</span>
+          </AnchorLink>
+          
+             
+              
+
+
+
           </a>
         </div>
 
@@ -69,9 +99,19 @@ const Navbar = () => {
             );
           })}
           {/* Mobile Login */}
-          <a href="#login" className="mobile-link login-mobile" onClick={() => setIsOpen(false)}>
+          <a href="#log" className="mobile-link login-mobile" onClick={() => setIsOpen(false)}>
             <LogIn size={20} />
-            <span>Login</span>
+             <AnchorLink
+            className="anchor-link"
+            href="#aaa"
+            offset={50}
+            onClick={() => {
+              setMenu("Login");
+              handleClose();
+            }}
+          >
+            <span>Log in</span>
+          </AnchorLink>
           </a>
         </div>
       )}
